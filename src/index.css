@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* 微软雅黑/苹方回退 */
+html, body {
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tiptap editor placeholder */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #9ca3af;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+/* 富文本编辑区滚动条细化 */
+.tiptap {
+  outline: none;
+}
+
+/* 模板缩略图容器滚动 */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+/* 数字输入去掉箭头 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* 导出画布区域：确保不出现滚动条 */
+[data-export-canvas="true"] {
+  overflow: visible !important;
+}
+
+/* 导出时隐藏 focus 轮廓 */
+[data-export-canvas="true"] *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* table 列宽拖拽把手悬停高亮 */
+th {
+  position: relative;
+  user-select: none;
+}
